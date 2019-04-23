@@ -46,6 +46,13 @@ trait Service extends Protocols {
             ToResponseMarshallable(Reply("Hello World"))
           }
         }
+      } ~
+      path("/pipe") {
+        get {
+          complete {
+            ToResponseMarshallable(Reply("pipe"))
+          }
+        }
       }
     }
   }
