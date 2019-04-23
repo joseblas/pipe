@@ -40,17 +40,17 @@ trait Service extends Protocols {
           }
         }
       } ~
+        path("pipe") {
+          get {
+            complete {
+              ToResponseMarshallable(Reply("pipe"))
+            }
+          }
+      } ~
       path("") {
         get {
           complete {
             ToResponseMarshallable(Reply("Hello World"))
-          }
-        }
-      } ~
-      path("/pipe") {
-        get {
-          complete {
-            ToResponseMarshallable(Reply("pipe"))
           }
         }
       }
